@@ -14,6 +14,8 @@ Similarly, `offset` will show the timezone regions, which matches the offset val
  If daylight saving for a region is ON, then UTC value is considered.
 If daylight saving is OFF, then the offset value passed by user is considered for filtering.
 
+6. Unit test cases can be run in Pycharm/any other python enabled editor, or can be run via
+going to the project directory in a terminal and running the command - `python -m unittest unit_tests\test_show_timezones.py`
  
 ### Examples to run the script:
 

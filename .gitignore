@@ -1,3 +1,4 @@
 .proj
 .idea
 venv
+__pycache__/

@@ -1,7 +1,12 @@
 import unittest
-from unittest import mock
-from show_timezones import TimeZoneProcess
 from collections import namedtuple
+from unittest import mock
+
+from show_timezones import TimeZoneProcess
+
+import sys
+sys.argv = ['']  # needed if we want to run the unit tests from command line (as we are using argparse module of python)
+# above line not needed if you run unittests from Pycharm/Python-enabled editor
 
 
 class TestTimeZoneProcess(unittest.TestCase):
@@ -54,16 +59,24 @@ class TestTimeZoneProcess(unittest.TestCase):
     def tearDown(self):
         pass
 
+    # @staticmethod
     def mocked_http_response(self):
+        """
+        Function for mock response
+        """
         Response = namedtuple('Response', ['json', 'status_code', 'text'])
         resp = Response(lambda: {"value": "any_random_value"}, "200", "any_random_data")
         return resp, []
 
     def test_filter_and_display_timezones_default_run_positive(self):
+        """
+        Test to get all data without any filtering
+        """
         ret_data = self.tz_obj.filter_and_display_timezones(self.test_json_data)
         self.assertEqual(len(self.test_json_data), len(ret_data), "The returned data is not correct.")
 
     def test_filter_and_display_timezones_empty_data(self):
+        """Test to get check if the function returns empty data"""
         ret_data = self.tz_obj.filter_and_display_timezones([])
         self.assertEqual(0, len(ret_data), "Returned data should have been empty")
 
@@ -106,5 +119,3 @@ class TestTimeZoneProcess(unittest.TestCase):
         resp = self.tz_obj.get_json_data()
         print(resp)
         self.assertEqual(1, len(resp), msg="Length of the response data should have been 1.")
-
-
