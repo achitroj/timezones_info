@@ -31,3 +31,17 @@ going to the project directory in a terminal and running the command - `python -
 >
 > python show_timezones.py --match Alaska --offset -10
  
+ 
+ # Some example outputs:
+ 
+![output_ex1](https://user-images.githubusercontent.com/3242362/196507074-816119bf-76da-4c24-af6d-0d283876e458.png)
+
+
+![output_ex2](https://user-images.githubusercontent.com/3242362/196507129-9616d686-bb17-4c1a-9fa9-30c10bf65519.png)
+
+
+![output_ex3](https://user-images.githubusercontent.com/3242362/196507151-bd424a51-6b0c-4fe4-8327-6e4587812494.png)
+
+
+
+
